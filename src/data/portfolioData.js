@@ -1,4 +1,6 @@
 // src/data/portfolioData.js
+const BASE = import.meta.env.BASE_URL;
+
 export const projects = [
   {
     title: "Gestion du Cycle d'Ingénieur",
@@ -8,10 +10,10 @@ export const projects = [
     media: {
       type: "carousel",
       images: [
-        "/images/c1.png",
-        "/images/c2.png",
-        "/images/c3.png",
-        "/images/c4.png"
+        `${BASE}images/c1.png`,
+        `${BASE}images/c2.png`,
+        `${BASE}images/c3.png`,
+        `${BASE}images/c4.png`
       ]
     }
   },
@@ -23,10 +25,9 @@ export const projects = [
     media: {
       type: "carousel",
       images: [
-        "/images/sumo1.png",
-        "/images/sumo2.png", 
-          "/images/sumo3.png"
-
+        `${BASE}images/sumo1.png`,
+        `${BASE}images/sumo2.png`, 
+        `${BASE}images/sumo3.png`
       ]
     }
   },
@@ -38,8 +39,8 @@ export const projects = [
     media: {
       type: "carousel",
       images: [
-        "/images/si_login.png",
-        "/images/si_db.png",
+        `${BASE}images/si_login.png`,
+        `${BASE}images/si_db.png`,
       ]
     }
   },
@@ -51,14 +52,14 @@ export const projects = [
     media: {
       type: "carousel",
       images: [
-        "/images/2.jpg",
-        "/images/5.jpg",
-        "/images/6.jpg",
-        "/images/7.jpg", 
-        "/images/11.jpg",
-        "/images/12.jpg",
-        "/images/13.jpg",
-        "/images/14.jpg"  
+        `${BASE}images/2.jpg`,
+        `${BASE}images/5.jpg`,
+        `${BASE}images/6.jpg`,
+        `${BASE}images/7.jpg`, 
+        `${BASE}images/11.jpg`,
+        `${BASE}images/12.jpg`,
+        `${BASE}images/13.jpg`,
+        `${BASE}images/14.jpg`  
       ]
     }
   },
@@ -70,7 +71,7 @@ export const projects = [
     media: {
       type: "carousel",
       images: [
-        "/images/image.png",
+        `${BASE}images/image.png`,
       ]
     }
   },
@@ -82,9 +83,9 @@ export const projects = [
     media: {
       type: "carousel",
       images: [
-        "/images/game1.png",
-        "/images/game2.png",
-        "/images/game3.png",
+        `${BASE}images/game1.png`,
+        `${BASE}images/game2.png`,
+        `${BASE}images/game3.png`,
       ]
     }
   }
@@ -97,7 +98,7 @@ export const experiences = [
     period: "Juillet - Août 2025",
     description: "Développement d'une application mobile de contrôle et supervision de ferme, conçue pour optimiser la gestion quotidienne et anticiper les maladies grâce à l'analyse de facteurs clés",
     tech: ["Node.js", "Express.js", "MongoDB", "React Native"],
-    logo: "/images/si_login.png"
+    logo: `${BASE}images/si_login.png`
   },
   {
     company: "IT Progress",
@@ -105,7 +106,7 @@ export const experiences = [
     period: "Juillet - Août 2024",
     description: "Conception et développement d'une application de gestion de laboratoire pour automatiser la gestion des équipements, stocks, utilisateurs, et des tâches et tests réalisés",
     tech: ["Angular", "Spring Boot", "MongoDB", "JHipster"],
-    logo: "/images/si_login.png"
+    logo: `${BASE}images/si_login.png`
   },
   {
     company: "Comar Assurances",
@@ -113,7 +114,7 @@ export const experiences = [
     period: "Février - Juin 2023",
     description: "Conception et développement d'une application web pour la mécanisation et la centralisation des méthodes de paiement",
     tech: ["Angular", "Spring Boot", "MongoDB", "JHipster"],
-    logo: "/images/si_login.png"
+    logo: `${BASE}images/si_login.png`
   },
   {
     company: "Tunisair",
@@ -121,7 +122,7 @@ export const experiences = [
     period: "Juillet - Août 2022",
     description: "Conception et développement d'une application web pour la gestion des billets d'avion",
     tech: ["Angular", "Spring Boot", "PostgreSQL"],
-    logo: "/images/si_login.png"
+    logo: `${BASE}images/si_login.png`
   }
 ];
 

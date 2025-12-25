@@ -68,7 +68,7 @@ export default function Hero() {
               </a>
               
               <a 
-                href="/cv.pdf" 
+                href={`${import.meta.env.BASE_URL}cv.pdf`}
                 download
                 className="flex items-center gap-2 px-6 py-4 border border-blue-500/50 rounded-xl font-semibold hover:bg-blue-500/10 transition-all duration-300 backdrop-blur-sm"
               >
@@ -80,8 +80,7 @@ export default function Hero() {
             {/* Social Links */}
             <div className="flex gap-4 justify-center lg:justify-start pt-4">
               <a 
-                              href="https://github.com/RezguiMedAziz" 
-
+                href="https://github.com/RezguiMedAziz" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-blue-500/10 border border-blue-500/30 rounded-xl hover:bg-blue-500/20 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group"
@@ -110,7 +109,7 @@ export default function Hero() {
                 <div className="w-72 h-72 sm:w-96 sm:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm">
                   {/* Replace this div with your actual image */}
                   <img 
-  src="/images/profile.jpg"  // ← Start with / (not ./public/)
+                    src={`${import.meta.env.BASE_URL}images/profile.jpg`}
                     alt="Mohamed Aziz REZGUI"
                     className="w-full h-full object-cover"
                     onError={(e) => {
