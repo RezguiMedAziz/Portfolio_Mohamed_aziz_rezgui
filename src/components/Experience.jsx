@@ -5,19 +5,19 @@ import { experiences } from '../data/portfolioData';
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-4 relative overflow-hidden bg-white dark:bg-black">
+    <section id="experience" className="py-16 md:py-24 px-4 relative overflow-hidden bg-white dark:bg-black">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-purple-50/30 to-gray-50 dark:from-black dark:via-purple-900/10 dark:to-black" />
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-64 h-64 md:w-96 md:h-96 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-3xl" />
       
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="p-3 bg-purple-500/10 dark:bg-purple-500/20 rounded-2xl border border-purple-500/30">
-              <Briefcase className="text-purple-500" size={32} />
+        <div className="text-center mb-12 md:mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-4">
+            <div className="p-2.5 md:p-3 bg-purple-500/10 dark:bg-purple-500/20 rounded-2xl border border-purple-500/30">
+              <Briefcase className="text-purple-500 w-7 h-7 md:w-8 md:h-8" />
             </div>
-            <h2 className="text-5xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white text-center">
               Expériences <span className="bg-gradient-to-r from-purple-400 to-blue-600 bg-clip-text text-transparent">Professionnelles</span>
             </h2>
           </div>
@@ -26,10 +26,10 @@ export default function Experience() {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Timeline Line */}
+          {/* Timeline Line - Hidden on mobile, visible on lg screens */}
           <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-purple-500/50 via-blue-500/50 to-purple-500/50" />
 
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (
               <div 
                 key={index} 
@@ -37,7 +37,7 @@ export default function Experience() {
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 }`}
               >
-                {/* Timeline Dot */}
+                {/* Timeline Dot - Hidden on mobile */}
                 <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full border-4 border-white dark:border-black z-10">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-md" />
                 </div>
@@ -48,30 +48,28 @@ export default function Experience() {
                 }`}>
                   <div className="group relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-                    <div className="relative bg-white dark:bg-gray-900 p-6 rounded-3xl border border-purple-500/20 dark:border-purple-500/30 backdrop-blur-sm hover:border-purple-500/40 transition-all duration-300 hover:scale-[1.02] shadow-lg">
-                      {/* Company Logo Placeholder */}
+                    <div className="relative bg-white dark:bg-gray-900 p-5 md:p-6 rounded-3xl border border-purple-500/20 dark:border-purple-500/30 backdrop-blur-sm hover:border-purple-500/40 transition-all duration-300 hover:scale-[1.02] shadow-lg">
+                      {/* Company Info */}
                       <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-4">
-                          <div className="w-14 h-14 bg-gradient-to-br from-purple-500/20 to-blue-500/20 dark:from-purple-500/30 dark:to-blue-500/30 rounded-2xl border border-purple-500/30 flex items-center justify-center">
-                            <Briefcase className="text-purple-500" size={24} />
+                        <div className="flex items-center gap-3 md:gap-4">
+                          <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-purple-500/20 to-blue-500/20 dark:from-purple-500/30 dark:to-blue-500/30 rounded-2xl border border-purple-500/30 flex items-center justify-center flex-shrink-0">
+                            <Briefcase className="text-purple-500 w-5 h-5 md:w-6 md:h-6" />
                           </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
+                          <div className="min-w-0">
+                            <h3 className="text-xl md:text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
                               {exp.company}
                             </h3>
-                            <p className="text-gray-600 dark:text-gray-400 font-medium">{exp.role}</p>
+                            <p className="text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base">{exp.role}</p>
                           </div>
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
-                        <div className="flex items-center gap-1">
-                          <Calendar size={16} />
-                          <span>{exp.period}</span>
-                        </div>
+                      <div className="flex items-center gap-2 text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-4">
+                        <Calendar className="w-4 h-4" />
+                        <span>{exp.period}</span>
                       </div>
 
-                      <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                      <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
                         {exp.description}
                       </p>
 
@@ -79,7 +77,7 @@ export default function Experience() {
                         {exp.tech.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1.5 bg-gradient-to-r from-purple-500/20 to-blue-500/20 dark:from-purple-500/30 dark:to-blue-500/30 border border-purple-500/40 rounded-full text-xs font-medium hover:from-purple-500/30 hover:to-blue-500/30 dark:hover:from-purple-500/40 dark:hover:to-blue-500/40 transition-all text-gray-700 dark:text-gray-300"
+                            className="px-2.5 md:px-3 py-1 md:py-1.5 bg-gradient-to-r from-purple-500/20 to-blue-500/20 dark:from-purple-500/30 dark:to-blue-500/30 border border-purple-500/40 rounded-full text-xs font-medium hover:from-purple-500/30 hover:to-blue-500/30 dark:hover:from-purple-500/40 dark:hover:to-blue-500/40 transition-all text-gray-700 dark:text-gray-300"
                           >
                             {tech}
                           </span>
