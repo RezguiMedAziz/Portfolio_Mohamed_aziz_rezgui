@@ -4,9 +4,17 @@ import { ChevronDown, Github, Linkedin, Download } from 'lucide-react';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
+    
+    // Preload the hero image
+    const img = new Image();
+    img.onload = () => setImageLoaded(true);
+    img.onerror = () => setImageError(true);
+    img.src = `${import.meta.env.BASE_URL}images/profile.jpg`;
   }, []);
 
   return (
@@ -107,26 +115,44 @@ export default function Hero() {
               {/* Image Container */}
               <div className="relative">
                 <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 dark:from-blue-500/30 dark:to-purple-600/30 border border-blue-500/30 backdrop-blur-sm">
-                  {/* Replace this div with your actual image */}
-                  <img 
-                    src={`${import.meta.env.BASE_URL}images/profile.jpg`}
-                    alt="Mohamed Aziz REZGUI"
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
-                  />
-                  {/* Placeholder if image doesn't load */}
-                  <div className="hidden w-full h-full items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-                        MAR
+                  
+                  {/* Loading Skeleton */}
+                  {!imageLoaded && !imageError && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20">
+                      <div className="text-center space-y-4">
+                        {/* Animated Spinner */}
+                        <div className="w-12 h-12 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin mx-auto" />
+                        <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent animate-pulse">
+                          MAR
+                        </div>
                       </div>
-                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-2">Photo de profil</p>
                     </div>
-                  </div>
+                  )}
+
+                  {/* Actual Image */}
+                  {!imageError && (
+                    <img 
+                      src={`${import.meta.env.BASE_URL}images/profile.jpg`}
+                      alt="Mohamed Aziz REZGUI"
+                      className={`w-full h-full object-cover transition-opacity duration-500 ${
+                        imageLoaded ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      onLoad={() => setImageLoaded(true)}
+                      onError={() => setImageError(true)}
+                    />
+                  )}
+                  
+                  {/* Fallback if image fails to load */}
+                  {imageError && (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20">
+                      <div className="text-center">
+                        <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                          MAR
+                        </div>
+                        <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-2">Photo de profil</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 
                 {/* Decorative Elements */}
