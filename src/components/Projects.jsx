@@ -1,6 +1,6 @@
 // src/components/Projects.jsx
 import React, { useState } from 'react';
-import { Code, ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
 import { projects } from '../data/portfolioData';
 
 function ProjectCard({ project, onImageClick }) {
@@ -17,21 +17,21 @@ function ProjectCard({ project, onImageClick }) {
   };
 
   return (
-    <div className="group bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:scale-[1.02]">
+    <div className="group bg-white dark:bg-gradient-to-br dark:from-slate-800/50 dark:to-slate-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:scale-[1.02] shadow-lg">
       {/* Media Section - Carousel */}
-      <div className="relative h-64 bg-slate-900/50 overflow-hidden">
+      <div className="relative h-64 bg-gray-100 dark:bg-slate-900/50 overflow-hidden">
         <img
           src={project.media.images[currentImage]}
           alt={`${project.title} - Image ${currentImage + 1}`}
           className="w-full h-full object-cover transition-transform duration-500 cursor-zoom-in"
           onClick={() => onImageClick(project.media.images, currentImage)}
           onError={(e) => {
-            e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23334155" width="400" height="300"/%3E%3Ctext fill="%2364748b" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EImage non disponible%3C/text%3E%3C/svg%3E';
+            e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23e5e7eb" width="400" height="300"/%3E%3Ctext fill="%239ca3af" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EImage non disponible%3C/text%3E%3C/svg%3E';
           }}
         />
         
         {/* Zoom Icon Indicator */}
-        <div className="absolute top-2 left-2 bg-slate-900/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        <div className="absolute top-2 left-2 bg-gray-900 dark:bg-slate-900/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           <ZoomIn className="w-4 h-4" />
         </div>
         
@@ -40,14 +40,14 @@ function ProjectCard({ project, onImageClick }) {
           <>
             <button
               onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-slate-800 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 dark:bg-slate-900/80 dark:hover:bg-slate-800 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10"
               aria-label="Image précédente"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-slate-800 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 dark:bg-slate-900/80 dark:hover:bg-slate-800 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10"
               aria-label="Image suivante"
             >
               <ChevronRight className="w-6 h-6" />
@@ -79,17 +79,17 @@ function ProjectCard({ project, onImageClick }) {
 
       {/* Content Section */}
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-blue-400 mb-3 group-hover:text-blue-300 transition-colors">
+        <h3 className="text-2xl font-bold text-blue-500 mb-3 group-hover:text-blue-400 transition-colors">
           {project.title}
         </h3>
-        <p className="text-gray-400 mb-4 leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2">
           {project.tech.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-blue-500/10 border border-blue-500/30 rounded-full text-sm text-blue-300"
+              className="px-3 py-1 bg-blue-500/10 border border-blue-500/30 rounded-full text-sm text-blue-600 dark:text-blue-400"
             >
               {tech}
             </span>
@@ -111,7 +111,7 @@ function ImageLightbox({ images, currentIndex, onClose, onNext, onPrev }) {
       {/* Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-white p-3 rounded-full transition-all z-50"
+        className="absolute top-4 right-4 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full transition-all z-50"
         aria-label="Fermer"
       >
         <X className="w-6 h-6" />
@@ -125,7 +125,7 @@ function ImageLightbox({ images, currentIndex, onClose, onNext, onPrev }) {
               e.stopPropagation();
               onPrev();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-slate-800 hover:bg-slate-700 text-white p-3 rounded-full transition-all z-50"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full transition-all z-50"
             aria-label="Image précédente"
           >
             <ChevronLeft className="w-8 h-8" />
@@ -135,7 +135,7 @@ function ImageLightbox({ images, currentIndex, onClose, onNext, onPrev }) {
               e.stopPropagation();
               onNext();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-slate-800 hover:bg-slate-700 text-white p-3 rounded-full transition-all z-50"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full transition-all z-50"
             aria-label="Image suivante"
           >
             <ChevronRight className="w-8 h-8" />
@@ -152,7 +152,7 @@ function ImageLightbox({ images, currentIndex, onClose, onNext, onPrev }) {
       />
 
       {/* Image Counter */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-slate-800 text-white px-4 py-2 rounded-full">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-full">
         {currentIndex + 1} / {images.length}
       </div>
     </div>
@@ -170,12 +170,12 @@ export default function Projects() {
 
   const openLightbox = (images, startIndex) => {
     setLightbox({ images, currentIndex: startIndex });
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setLightbox({ images: null, currentIndex: 0 });
-    document.body.style.overflow = 'auto'; // Restore scrolling
+    document.body.style.overflow = 'auto';
   };
 
   const nextImage = () => {
@@ -194,7 +194,6 @@ export default function Projects() {
     }));
   };
 
-  // Handle escape key to close lightbox
   React.useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape' && lightbox.images) {
@@ -206,15 +205,18 @@ export default function Projects() {
   }, [lightbox.images]);
 
   return (
-    <section id="projects" className="py-20 px-6 relative overflow-hidden">
+    <section id="projects" className="py-24 px-4 relative overflow-hidden bg-gray-50 dark:bg-black">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/20 to-white dark:from-black dark:via-slate-900/50 dark:to-black pointer-events-none" />
       
       {/* Section Header */}
       <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-          Projets Académiques
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+            Projets <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Académiques</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto rounded-full" />
+        </div>
         
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -225,7 +227,7 @@ export default function Projects() {
               className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                 filter === category
                   ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/50'
-                  : 'bg-blue-500/10 border border-blue-500/30 text-gray-300 hover:bg-blue-500/20 hover:border-blue-500/50'
+                  : 'bg-blue-500/10 border border-blue-500/30 text-gray-700 dark:text-gray-300 hover:bg-blue-500/20 hover:border-blue-500/50'
               }`}
             >
               {category === 'all' ? 'Tous' : category}
@@ -246,7 +248,7 @@ export default function Projects() {
 
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-400 text-lg">Aucun projet trouvé dans cette catégorie</p>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">Aucun projet trouvé dans cette catégorie</p>
           </div>
         )}
       </div>

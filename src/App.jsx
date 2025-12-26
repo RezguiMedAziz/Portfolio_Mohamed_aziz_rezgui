@@ -1,5 +1,6 @@
 // src/App.jsx
 import React, { useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,14 +14,16 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
+        <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
