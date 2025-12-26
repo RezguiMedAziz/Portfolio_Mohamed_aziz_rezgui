@@ -6,7 +6,6 @@ This project is **NOT a template**.
 
 It is an **original project fully designed and developed by Mohamed Aziz Rezgui** on **December 24, 2025**.
 
-Any resemblance to existing templates is purely coincidental.  
 The structure, design, content, and code were created specifically for this portfolio.
 
 🚫 **Unauthorized copying, redistribution, or claiming this project as your own is not permitted.**
