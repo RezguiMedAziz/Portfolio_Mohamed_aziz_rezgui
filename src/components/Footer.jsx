@@ -19,7 +19,7 @@ export default function Footer() {
             <p className="text-gray-600 dark:text-gray-400 flex items-center gap-2 justify-center md:justify-start">
               <span>&copy; 2025 Mohamed Aziz REZGUI</span>
             </p>
-            <p className="text-gray-500 dark:text-gray-600 text-sm mt-2">
+            <p className="text-gray-500 dark:text-gray-500 text-sm mt-2">
               Tous droits réservés
             </p>
           </div>
@@ -30,7 +30,7 @@ export default function Footer() {
             className="group relative"
           >
             <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-lg group-hover:blur-xl transition-all" />
-            <div className="relative flex items-center gap-2 px-6 py-3 bg-blue-500/10 border border-blue-500/30 rounded-full hover:bg-blue-500/20 hover:border-blue-500/50 transition-all backdrop-blur-sm">
+            <div className="relative flex items-center gap-2 px-6 py-3 bg-blue-500/10 dark:bg-blue-500/20 border border-blue-500/30 rounded-full hover:bg-blue-500/20 dark:hover:bg-blue-500/30 hover:border-blue-500/50 transition-all backdrop-blur-sm">
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Retour en haut</span>
               <ArrowUp className="text-blue-500 group-hover:-translate-y-1 transition-transform" size={18} />
             </div>
@@ -39,7 +39,7 @@ export default function Footer() {
 
         {/* Bottom Links */}
         <div className="mt-8 pt-6 border-t border-blue-500/10 text-center">
-          <p className="text-gray-500 dark:text-gray-600 text-sm">
+          <p className="text-gray-500 dark:text-gray-500 text-sm">
             Développé Par Mohamed Aziz Rezgui • 2025
           </p>
         </div>

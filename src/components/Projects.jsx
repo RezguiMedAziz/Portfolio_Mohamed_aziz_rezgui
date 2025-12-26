@@ -17,9 +17,9 @@ function ProjectCard({ project, onImageClick }) {
   };
 
   return (
-    <div className="group bg-white dark:bg-gradient-to-br dark:from-slate-800/50 dark:to-slate-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:scale-[1.02] shadow-lg">
+    <div className="group bg-white dark:bg-gray-900 backdrop-blur-sm rounded-2xl overflow-hidden border border-blue-500/20 dark:border-blue-500/30 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:scale-[1.02] shadow-lg">
       {/* Media Section - Carousel */}
-      <div className="relative h-64 bg-gray-100 dark:bg-slate-900/50 overflow-hidden">
+      <div className="relative h-64 bg-gray-100 dark:bg-gray-800 overflow-hidden">
         <img
           src={project.media.images[currentImage]}
           alt={`${project.title} - Image ${currentImage + 1}`}
@@ -31,7 +31,7 @@ function ProjectCard({ project, onImageClick }) {
         />
         
         {/* Zoom Icon Indicator */}
-        <div className="absolute top-2 left-2 bg-gray-900 dark:bg-slate-900/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        <div className="absolute top-2 left-2 bg-gray-900 dark:bg-gray-800/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           <ZoomIn className="w-4 h-4" />
         </div>
         
@@ -40,14 +40,14 @@ function ProjectCard({ project, onImageClick }) {
           <>
             <button
               onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 dark:bg-slate-900/80 dark:hover:bg-slate-800 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 dark:bg-gray-800/80 dark:hover:bg-gray-700 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10"
               aria-label="Image précédente"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 dark:bg-slate-900/80 dark:hover:bg-slate-800 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 dark:bg-gray-800/80 dark:hover:bg-gray-700 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10"
               aria-label="Image suivante"
             >
               <ChevronRight className="w-6 h-6" />
@@ -89,7 +89,7 @@ function ProjectCard({ project, onImageClick }) {
           {project.tech.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-blue-500/10 border border-blue-500/30 rounded-full text-sm text-blue-600 dark:text-blue-400"
+              className="px-3 py-1 bg-blue-500/10 dark:bg-blue-500/20 border border-blue-500/30 rounded-full text-sm text-blue-600 dark:text-blue-400"
             >
               {tech}
             </span>
@@ -207,7 +207,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-4 relative overflow-hidden bg-gray-50 dark:bg-black">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/20 to-white dark:from-black dark:via-slate-900/50 dark:to-black pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/20 to-white dark:from-black dark:via-blue-900/10 dark:to-black pointer-events-none" />
       
       {/* Section Header */}
       <div className="max-w-7xl mx-auto relative z-10">
@@ -227,7 +227,7 @@ export default function Projects() {
               className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                 filter === category
                   ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/50'
-                  : 'bg-blue-500/10 border border-blue-500/30 text-gray-700 dark:text-gray-300 hover:bg-blue-500/20 hover:border-blue-500/50'
+                  : 'bg-blue-500/10 dark:bg-blue-500/20 border border-blue-500/30 text-gray-700 dark:text-gray-300 hover:bg-blue-500/20 dark:hover:bg-blue-500/30 hover:border-blue-500/50'
               }`}
             >
               {category === 'all' ? 'Tous' : category}

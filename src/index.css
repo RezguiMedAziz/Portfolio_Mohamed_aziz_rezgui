@@ -27,7 +27,7 @@ html {
   --bg-secondary: #111827;
   --text-primary: #ffffff;
   --text-secondary: #9ca3af;
-  --border-color: rgba(59, 130, 246, 0.2);
+  --border-color: rgba(59, 130, 246, 0.3);
 }
 
 body {
@@ -58,20 +58,20 @@ body {
 }
 
 /* Custom Scrollbar - Light Mode */
-.light ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
 }
 
-.light ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: #f3f4f6;
 }
 
-.light ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #3b82f6, #8b5cf6);
   border-radius: 10px;
 }
 
-.light ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #2563eb, #7c3aed);
 }
 

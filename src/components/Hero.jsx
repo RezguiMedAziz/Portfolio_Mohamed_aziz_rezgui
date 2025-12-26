@@ -14,15 +14,15 @@ export default function Hero() {
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-blue-900/20 dark:via-black dark:to-purple-900/20" />
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-3xl animate-pulse" 
+        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-purple-600/10 dark:bg-purple-600/20 rounded-full blur-3xl animate-pulse" 
              style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400/5 rounded-full blur-3xl animate-pulse" 
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400/5 dark:bg-blue-400/10 rounded-full blur-3xl animate-pulse" 
              style={{ animationDelay: '2s' }} />
       </div>
 
       {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:100px_100px] dark:bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:100px_100px] dark:bg-[linear-gradient(rgba(59,130,246,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.07)_1px,transparent_1px)]" />
       
       <div className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -62,7 +62,7 @@ export default function Hero() {
               
               <a 
                 href="#projects" 
-                className="px-8 py-4 border-2 border-blue-500 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-500/10 transition-all duration-300 backdrop-blur-sm"
+                className="px-8 py-4 border-2 border-blue-500 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-500/10 dark:hover:bg-blue-500/20 transition-all duration-300 backdrop-blur-sm"
               >
                 Voir Mes Projets
               </a>
@@ -70,7 +70,7 @@ export default function Hero() {
               <a 
                 href={`${import.meta.env.BASE_URL}cv.pdf`}
                 download
-                className="flex items-center gap-2 px-6 py-4 border border-blue-500/50 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-500/10 transition-all duration-300 backdrop-blur-sm"
+                className="flex items-center gap-2 px-6 py-4 border border-blue-500/50 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-500/10 dark:hover:bg-blue-500/20 transition-all duration-300 backdrop-blur-sm"
               >
                 <Download size={20} />
                 <span>CV</span>
@@ -83,7 +83,7 @@ export default function Hero() {
                 href="https://github.com/RezguiMedAziz" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-blue-500/10 border border-blue-500/30 rounded-xl hover:bg-blue-500/20 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group"
+                className="p-3 bg-blue-500/10 dark:bg-blue-500/20 border border-blue-500/30 rounded-xl hover:bg-blue-500/20 dark:hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group"
               >
                 <Github className="text-blue-500 group-hover:scale-110 transition-transform" size={24} />
               </a>
@@ -91,7 +91,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/mohamed-aziz-rezgui-9bb603239/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-blue-500/10 border border-blue-500/30 rounded-xl hover:bg-blue-500/20 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group"
+                className="p-3 bg-blue-500/10 dark:bg-blue-500/20 border border-blue-500/30 rounded-xl hover:bg-blue-500/20 dark:hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group"
               >
                 <Linkedin className="text-blue-500 group-hover:scale-110 transition-transform" size={24} />
               </a>
@@ -106,7 +106,7 @@ export default function Hero() {
               
               {/* Image Container */}
               <div className="relative">
-                <div className="w-72 h-72 sm:w-96 sm:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm">
+                <div className="w-72 h-72 sm:w-96 sm:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 dark:from-blue-500/30 dark:to-purple-600/30 border border-blue-500/30 backdrop-blur-sm">
                   {/* Replace this div with your actual image */}
                   <img 
                     src={`${import.meta.env.BASE_URL}images/profile.jpg`}
@@ -129,8 +129,8 @@ export default function Hero() {
                 </div>
                 
                 {/* Decorative Elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl" />
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl" />
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded-full blur-2xl" />
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500/20 dark:bg-purple-500/30 rounded-full blur-2xl" />
               </div>
             </div>
           </div>

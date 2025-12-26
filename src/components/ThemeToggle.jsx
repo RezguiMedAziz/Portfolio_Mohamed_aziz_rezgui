@@ -9,7 +9,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative group p-2 rounded-xl border border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20 transition-all duration-300 backdrop-blur-sm"
+      className="relative group p-2 rounded-xl border border-blue-500/30 bg-blue-500/10 dark:bg-blue-500/20 hover:bg-blue-500/20 dark:hover:bg-blue-500/30 transition-all duration-300 backdrop-blur-sm"
       aria-label="Toggle theme"
     >
       {/* Background Glow */}
