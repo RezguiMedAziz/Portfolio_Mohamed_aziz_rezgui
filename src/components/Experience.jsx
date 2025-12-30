@@ -1,9 +1,11 @@
 // src/components/Experience.jsx
 import React from 'react';
 import { Briefcase, Calendar } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { experiences } from '../data/portfolioData';
 
 export default function Experience() {
+  const { t } = useTranslation();
   return (
     <section id="experience" className="py-16 md:py-24 px-4 relative overflow-hidden bg-white dark:bg-black">
       {/* Background */}
@@ -18,7 +20,7 @@ export default function Experience() {
               <Briefcase className="text-purple-500 w-7 h-7 md:w-8 md:h-8" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white text-center">
-              Expériences <span className="bg-gradient-to-r from-purple-400 to-blue-600 bg-clip-text text-transparent">Professionnelles</span>
+              {t('experience.title')} <span className="bg-gradient-to-r from-purple-400 to-blue-600 bg-clip-text text-transparent">{t('experience.titleSuffix')}</span>
             </h2>
           </div>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-blue-600 mx-auto rounded-full" />
@@ -57,20 +59,20 @@ export default function Experience() {
                           </div>
                           <div className="min-w-0">
                             <h3 className="text-xl md:text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
-                              {exp.company}
+                              {t(`experience.exp${index + 1}.company`)}
                             </h3>
-                            <p className="text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base">{exp.role}</p>
+                            <p className="text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base">{t(`experience.exp${index + 1}.role`)}</p>
                           </div>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-2 text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-4">
                         <Calendar className="w-4 h-4" />
-                        <span>{exp.period}</span>
+                        <span>{t(`experience.exp${index + 1}.period`)}</span>
                       </div>
 
                       <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
-                        {exp.description}
+                        {t(`experience.exp${index + 1}.description`)}
                       </p>
 
                       <div className="flex flex-wrap gap-2">

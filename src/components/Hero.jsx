@@ -1,8 +1,10 @@
 // src/components/Hero.jsx
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Github, Linkedin, Download } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -40,22 +42,21 @@ export default function Hero() {
           <div className="text-center lg:text-left space-y-6 md:space-y-8">
             <div className="space-y-3 md:space-y-4">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 dark:text-white">
-                Bonjour, je suis
+                {t('hero.title')}
                 <span className="block mt-2 bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
-                  Mohamed Aziz REZGUI
+                  {t('hero.name')}
                 </span>
               </h1>
               <div className="flex items-center justify-center lg:justify-start space-x-2">
                 <div className="h-1 w-8 md:w-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full" />
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-light">
-                  Élève Ingénieur en Génie Logiciel
+                  {t('hero.subtitle')}
                 </p>
               </div>
             </div>
             
             <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Passionné par le développement d'applications innovantes et l'optimisation de solutions techniques. 
-              Je transforme des idées en expériences numériques exceptionnelles.
+              {t('hero.description')}
             </p>
 
             {/* CTA Buttons */}
@@ -64,7 +65,7 @@ export default function Hero() {
                 href="#contact" 
                 className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-semibold overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 text-sm md:text-base"
               >
-                <span className="relative z-10">Me Contacter</span>
+                <span className="relative z-10">{t('hero.ctaContact')}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
               
@@ -72,7 +73,7 @@ export default function Hero() {
                 href="#projects" 
                 className="px-6 md:px-8 py-3 md:py-4 border-2 border-blue-500 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-500/10 dark:hover:bg-blue-500/20 transition-all duration-300 backdrop-blur-sm text-sm md:text-base"
               >
-                Voir Mes Projets
+                {t('hero.ctaProjects')}
               </a>
               
               <a 
@@ -81,7 +82,7 @@ export default function Hero() {
                 className="flex items-center gap-2 px-5 md:px-6 py-3 md:py-4 border border-blue-500/50 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-500/10 dark:hover:bg-blue-500/20 transition-all duration-300 backdrop-blur-sm text-sm md:text-base"
               >
                 <Download size={18} className="md:w-5 md:h-5" />
-                <span>CV</span>
+                <span>{t('hero.ctaCV')}</span>
               </a>
             </div>
 

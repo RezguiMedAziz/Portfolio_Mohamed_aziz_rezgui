@@ -1,0 +1,173 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "about": "حول",
+    "experience": "الخبرة",
+    "projects": "المشاريع",
+    "contact": "اتصل"
+  },
+  "hero": {
+    "title": "مرحبا، أنا",
+    "name": "محمد عزيز رزقي",
+    "subtitle": "طالب هندسة في هندسة البرمجيات",
+    "description": "شغوف بتطوير التطبيقات المبتكرة وتحسين الحلول التقنية. أحول الأفكار إلى تجارب رقمية استثنائية.",
+    "ctaContact": "تواصل معي",
+    "ctaProjects": "شاهد مشاريعي",
+    "ctaCV": "السيرة الذاتية"
+  },
+  "about": {
+    "title": "عن",
+    "titleSuffix": "نفسي",
+    "education": "التعليم",
+    "associations": "الجمعيات",
+    "skills": "المهارات التقنية"
+  },
+  "experience": {
+    "title": "الخبرات",
+    "titleSuffix": "المهنية",
+    "exp1": {
+      "company": "Blue Jet Engineering",
+      "role": "مطور Full Stack",
+      "period": "يوليو - أغسطس 2025",
+      "description": "تطوير تطبيق جوال للتحكم والإشراف على المزرعة، مصمم لتحسين الإدارة اليومية والتنبؤ بالأمراض من خلال تحليل العوامل الرئيسية"
+    },
+    "exp2": {
+      "company": "IT Progress",
+      "role": "مطور Full Stack",
+      "period": "يوليو - أغسطس 2024",
+      "description": "تصميم وتطوير تطبيق إدارة المختبر لأتمتة إدارة المعدات والمخزون والمستخدمين والمهام والاختبارات"
+    },
+    "exp3": {
+      "company": "Comar Assurances",
+      "role": "مطور Full Stack",
+      "period": "فبراير - يونيو 2023",
+      "description": "تصميم وتطوير تطبيق ويب لميكنة وتمركز أساليب الدفع"
+    },
+    "exp4": {
+      "company": "Tunisair",
+      "role": "مطور Full Stack",
+      "period": "يوليو - أغسطس 2022",
+      "description": "تصميم وتطوير تطبيق ويب لإدارة تذاكر الطيران"
+    }
+  },
+  "projects": {
+    "title": "المشاريع",
+    "titleSuffix": "الأكاديمية",
+    "prevImage": "الصورة السابقة",
+    "nextImage": "الصورة التالية",
+    "viewMore": "عرض المزيد",
+    "noProjects": "لم يتم العثور على مشاريع في هذه الفئة",
+    "filterAll": "الكل",
+    "categories": {
+      "Web": "ويب",
+      "IA & ML": "الذكاء الاصطناعي والتعلم الآلي",
+      "Mobile & IoT": "الهاتف وإنترنت الأشياء",
+      "Data Science": "علم البيانات",
+      "Game Dev": "تطوير الألعاب"
+    },
+    "project1": {
+      "title": "إدارة دورة المهندس",
+      "description": "تطبيق ويب لإدارة المسارات الأكاديمية لطلاب الهندسة، من التسجيل إلى التخرج",
+      "category": "ويب"
+    },
+    "project2": {
+      "title": "محاكاة حركة المرور في الوقت الفعلي",
+      "description": "تطوير حل لمحاكاة حركة المرور الحضرية وتحسين التنقل باستخدام لوحة معلومات تفاعلية مع التعلم المعزز",
+      "category": "AI & ML"
+    },
+    "project3": {
+      "title": "متقرر حوادث الشارع",
+      "description": "تطبيق ويب يسمح للمواطنين بالإبلاغ عن الحوادث الحضرية (الحفر والبنية التحتية المتضررة) لتيسير تدخل السلطات",
+      "category": "ويب"
+    },
+    "project4": {
+      "title": "تطبيق الزراعة الذكية للهاتف",
+      "description": "تطبيق جوال متصل بنظام IoT لمراقبة بيانات البيئة في الزراعة الذكية في الوقت الفعلي. التحكم عن بعد في المعدات",
+      "category": "Mobile & IoT"
+    },
+    "project5": {
+      "title": "توقع أسعار العملات المشفرة",
+      "description": "نظام استخراج البيانات التلقائي من مصادر على الإنترنت لجمع معلومات العملات المشفرة وبناء نموذج تنبؤي",
+      "category": "Data Science"
+    },
+    "project6": {
+      "title": "لعبة ثنائية الأبعاد تفاعلية",
+      "description": "إنشاء لعبة ثنائية الأبعاد مع واجهة سلسة وميكانيكا لعبة ديناميكية وإدارة الدرجات والمستويات",
+      "category": "Game Dev"
+    }
+  },
+  "education": {
+    "edu1": {
+      "institution": "ISAMM - المعهد العالي للفنون المتعددة الوسائط بمنوبة",
+      "degree": "هندسة البرمجيات",
+      "period": "2023 - الحالي",
+      "description": "تخصص في تطوير البرمجيات والذكاء الاصطناعي وتقنيات الوسائط المتعددة"
+    },
+    "edu2": {
+      "institution": "FSEGT - كلية العلوم الاقتصادية والتصرف بتونس",
+      "degree": "بكالوريوس في ذكاء الأعمال",
+      "period": "2020 - 2023",
+      "description": "تدريب في تحليل البيانات وذكاء الأعمال وأنظمة المعلومات"
+    },
+    "edu3": {
+      "institution": "ثانوية باب الخضراء - تونس",
+      "degree": "بكالوريا العلوم التجريبية",
+      "period": "2019 - 2020",
+      "description": " تخصص العلوم التجريبية"
+    }
+  },
+  "associations": {
+    "assoc1": {
+      "name": "Orenda Junior Entreprise",
+      "role": "مسؤول الشؤون الخارجية",
+      "period": "2025 - الحالي"
+    },
+    "assoc2": {
+      "name": "Orenda Junior Entreprise",
+      "role": "ضابط المسؤولية الاجتماعية",
+      "period": "2024 - 2025"
+    },
+    "assoc3": {
+      "name": "Orenda Junior Entreprise",
+      "role": "مستشار دولي",
+      "period": "2023 - 2024"
+    },
+    "assoc4": {
+      "name": "Club Robotique ISAMM",
+      "role": "مدير الموارد البشرية",
+      "period": "2023 - 2024"
+    },
+    "assoc5": {
+      "name": "JCI Étudiant FSEGT",
+      "role": "مستشار قانوني",
+      "period": "2021 - 2022"
+    }
+  },
+  "skills": {
+    "اللغات": ["Java", "Python", "C#", "JavaScript", "TypeScript", "Dart", "C"],
+    "واجهة المستخدم": ["React.js", "Angular", "Flutter", "HTML/CSS"],
+    "الخادم الخلفي": ["Node.js", "Express.js", "Spring Boot", "FastAPI"],
+    "قواعد البيانات": ["MongoDB", "PostgreSQL", "MySQL", "Firebase"],
+    "الأدوات والعمليات": ["Git", "Docker", "Kubernetes", "SUMO"]
+  },
+  "contact": {
+    "title": "دعونا نبقى على",
+    "titleSuffix": "اتصال",
+    "description": "هل لديك مشروع في ذهنك؟ لا تتردد في التواصل معي لمناقشة أفكارك.",
+    "email": "بريد إلكتروني",
+    "phone": "هاتف",
+    "location": "الموقع",
+    "availability": "التوفرية",
+    "availabilityStatus": "متاح للمشاريع الجديدة",
+    "followMe": "جدني على",
+    "emailAddress": "rezguiaziz32@gmail.com",
+    "phoneNumber": "  63 62 84 58 216+",
+    "locationText": "تونس، تونس"
+  },
+  "footer": {
+    "copyright": "© 2025 محمد عزيز رزقي",
+    "rights": "جميع الحقوق محفوظة",
+    "developed": "تم التطوير بواسطة محمد عزيز رزقي • 2025",
+    "backToTop": "العودة للأعلى"
+  }
+}

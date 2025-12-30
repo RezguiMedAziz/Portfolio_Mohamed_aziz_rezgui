@@ -1,0 +1,173 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hello, I'm",
+    "name": "Mohamed Aziz REZGUI",
+    "subtitle": "Software Engineering Student",
+    "description": "Passionate about developing innovative applications and optimizing technical solutions. I transform ideas into exceptional digital experiences.",
+    "ctaContact": "Contact Me",
+    "ctaProjects": "View My Projects",
+    "ctaCV": "CV"
+  },
+  "about": {
+    "title": "About",
+    "titleSuffix": "Me",
+    "education": "Education",
+    "associations": "Associations",
+    "skills": "Technical Skills"
+  },
+  "experience": {
+    "title": "Professional",
+    "titleSuffix": "Experiences",
+    "exp1": {
+      "company": "Blue Jet Engineering",
+      "role": "Full Stack Developer",
+      "period": "July - August 2025",
+      "description": "Development of a mobile application for farm control and supervision, designed to optimize daily management and anticipate diseases through key factor analysis"
+    },
+    "exp2": {
+      "company": "IT Progress",
+      "role": "Full Stack Developer",
+      "period": "July - August 2024",
+      "description": "Design and development of a laboratory management application to automate equipment management, inventory, users, and tasks and tests performed"
+    },
+    "exp3": {
+      "company": "Comar Assurances",
+      "role": "Full Stack Developer",
+      "period": "February - June 2023",
+      "description": "Design and development of a web application for mechanization and centralization of payment methods"
+    },
+    "exp4": {
+      "company": "Tunisair",
+      "role": "Full Stack Developer",
+      "period": "July - August 2022",
+      "description": "Design and development of a web application for airline ticket management"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "titleSuffix": "Academic",
+    "prevImage": "Previous image",
+    "nextImage": "Next image",
+    "viewMore": "View More",
+    "noProjects": "No projects found in this category",
+    "filterAll": "All",
+    "categories": {
+      "Web": "Web",
+      "IA & ML": "AI & ML",
+      "Mobile & IoT": "Mobile & IoT",
+      "Data Science": "Data Science",
+      "Game Dev": "Game Dev"
+    },
+    "project1": {
+      "title": "Engineer Cycle Management",
+      "description": "Web application for managing academic paths of engineering students, from enrollment to graduation",
+      "category": "Web"
+    },
+    "project2": {
+      "title": "Real-time Traffic Simulation",
+      "description": "Development of a solution to simulate urban traffic and optimize circulation using an interactive dashboard with reinforcement learning",
+      "category": "AI & ML"
+    },
+    "project3": {
+      "title": "Street Incident Reporter",
+      "description": "Web application allowing citizens to report urban incidents (potholes, damaged infrastructure) to facilitate government intervention",
+      "category": "Web"
+    },
+    "project4": {
+      "title": "Smart Farm Mobile App",
+      "description": "Connected mobile application to an IoT system for real-time monitoring of smart farm environmental data. Remote control of equipment (cameras, pumps)",
+      "category": "Mobile & IoT"
+    },
+    "project5": {
+      "title": "Crypto Price Prediction",
+      "description": "Automatic data extraction system from various online sources to collect cryptocurrency information and build a predictive model",
+      "category": "Data Science"
+    },
+    "project6": {
+      "title": "Interactive 2D Game",
+      "description": "Creation of an interactive 2D game with smooth interface, dynamic game mechanics and score and level management",
+      "category": "Game Dev"
+    }
+  },
+  "education": {
+    "edu1": {
+      "institution": "ISAMM - Institut Supérieur des Arts Multimédia",
+      "degree": "Software Engineering",
+      "period": "2023 - Present",
+      "description": "Specialization in software development, artificial intelligence and multimedia technologies"
+    },
+    "edu2": {
+      "institution": "FSEGT - Faculté des Sciences Économiques et de Gestion de Tunis",
+      "degree": "Bachelor in Business Intelligence",
+      "period": "2020 - 2023",
+      "description": "Training in data analysis, business intelligence and information systems"
+    },
+    "edu3": {
+      "institution": "Lycée Beb El Khadra - Tunis",
+      "degree": "Baccalaureate in Experimental Sciences",
+      "period": "2019 - 2020",
+      "description": "Merit distinction, specialization in Experimental Sciences"
+    }
+  },
+  "associations": {
+    "assoc1": {
+      "name": "Orenda Junior Entreprise",
+      "role": "Head of Foreign Affairs",
+      "period": "2025 - Present"
+    },
+    "assoc2": {
+      "name": "Orenda Junior Entreprise",
+      "role": "CSR Officer",
+      "period": "2024 - 2025"
+    },
+    "assoc3": {
+      "name": "Orenda Junior Entreprise",
+      "role": "International Consultant",
+      "period": "2023 - 2024"
+    },
+    "assoc4": {
+      "name": "Club Robotique ISAMM",
+      "role": "Human Resources Manager",
+      "period": "2023 - 2024"
+    },
+    "assoc5": {
+      "name": "JCI Étudiant FSEGT",
+      "role": "Legal Advisor",
+      "period": "2021 - 2022"
+    }
+  },
+  "skills": {
+    "Languages": ["Java", "Python", "C#", "JavaScript", "TypeScript", "Dart", "C"],
+    "Frontend": ["React.js", "Angular", "Flutter", "HTML/CSS"],
+    "Backend": ["Node.js", "Express.js", "Spring Boot", "FastAPI"],
+    "Databases": ["MongoDB", "PostgreSQL", "MySQL", "Firebase"],
+    "Tools & DevOps": ["Git", "Docker", "Kubernetes", "SUMO"]
+  },
+  "contact": {
+    "title": "Let's Stay In",
+    "titleSuffix": "Touch",
+    "description": "Have a project in mind? Don't hesitate to contact me to discuss your ideas.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "availability": "Availability",
+    "availabilityStatus": "Available for new projects",
+    "followMe": "Find Me On",
+    "emailAddress": "rezguiaziz32@gmail.com",
+    "phoneNumber": "+216 58 846 263",
+    "locationText": "Tunis, Tunisia"
+  },
+  "footer": {
+    "copyright": "© 2025 Mohamed Aziz REZGUI",
+    "rights": "All rights reserved",
+    "developed": "Developed By Mohamed Aziz Rezgui • 2025",
+    "backToTop": "Back to top"
+  }
+}

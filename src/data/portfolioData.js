@@ -142,7 +142,7 @@ export const education = [
     description: "Spécialisation en développement logiciel, intelligence artificielle et technologies multimédia"
   },
   {
-    institution: "FSEGT - Faculté des Sciences Économiques",
+    institution: "FSEGT - Faculté des Sciences Économiques et de Gestion de Tunis",
     degree: "Licence en Business Intelligence",
     period: "2020 - 2023",
     description: "Formation en analyse de données, business intelligence et systèmes d'information"

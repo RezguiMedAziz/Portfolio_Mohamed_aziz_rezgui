@@ -1,0 +1,173 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Bonjour, je suis",
+    "name": "Mohamed Aziz REZGUI",
+    "subtitle": "Élève Ingénieur en Génie Logiciel",
+    "description": "Passionné par le développement d'applications innovantes et l'optimisation de solutions techniques. Je transforme des idées en expériences numériques exceptionnelles.",
+    "ctaContact": "Me Contacter",
+    "ctaProjects": "Voir Mes Projets",
+    "ctaCV": "CV"
+  },
+  "about": {
+    "title": "À Propos",
+    "titleSuffix": "Moi",
+    "education": "Formation",
+    "associations": "Vie Associative",
+    "skills": "Compétences Techniques"
+  },
+  "experience": {
+    "title": "Expériences",
+    "titleSuffix": "Professionnelles",
+    "exp1": {
+      "company": "Blue Jet Engineering",
+      "role": "Développeur Full Stack",
+      "period": "Juillet - Août 2025",
+      "description": "Développement d'une application mobile de contrôle et supervision de ferme, conçue pour optimiser la gestion quotidienne et anticiper les maladies grâce à l'analyse de facteurs clés"
+    },
+    "exp2": {
+      "company": "IT Progress",
+      "role": "Développeur Full Stack",
+      "period": "Juillet - Août 2024",
+      "description": "Conception et développement d'une application de gestion de laboratoire pour automatiser la gestion des équipements, stocks, utilisateurs, et des tâches et tests réalisés"
+    },
+    "exp3": {
+      "company": "Comar Assurances",
+      "role": "Développeur Full Stack",
+      "period": "Février - Juin 2023",
+      "description": "Conception et développement d'une application web pour la mécanisation et la centralisation des méthodes de paiement"
+    },
+    "exp4": {
+      "company": "Tunisair",
+      "role": "Développeur Full Stack",
+      "period": "Juillet - Août 2022",
+      "description": "Conception et développement d'une application web pour la gestion des billets d'avion"
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "titleSuffix": "Académiques",
+    "prevImage": "Image précédente",
+    "nextImage": "Image suivante",
+    "viewMore": "Voir Plus",
+    "noProjects": "Aucun projet trouvé dans cette catégorie",
+    "filterAll": "Tous",
+    "categories": {
+      "Web": "Web",
+      "IA & ML": "IA & ML",
+      "Mobile & IoT": "Mobile & IoT",
+      "Data Science": "Science des Données",
+      "Game Dev": "Développement de Jeux"
+    },
+    "project1": {
+      "title": "Gestion du Cycle d'Ingénieur",
+      "description": "Application web de gestion des parcours académiques des élèves ingénieurs, depuis l'intégration jusqu'à la diplomation",
+      "category": "Web"
+    },
+    "project2": {
+      "title": "Simulation de Trafic en Temps Réel",
+      "description": "Développement d'une solution permettant de simuler le trafic urbain et d'optimiser la circulation à l'aide d'un tableau de bord interactif en utilisant l'apprentissage par renforcement",
+      "category": "IA & ML"
+    },
+    "project3": {
+      "title": "Street Incident Reporter",
+      "description": "Application web permettant aux citoyens de signaler les incidents urbains (nids-de-poule, infrastructures endommagées) pour faciliter l'intervention des autorités gouvernementales",
+      "category": "Web"
+    },
+    "project4": {
+      "title": "Smart Farm Mobile App",
+      "description": "Application mobile connectée à un système IoT pour le suivi en temps réel des données environnementales d'une smart farm. Contrôle à distance des équipements (caméras, pompes)",
+      "category": "Mobile & IoT"
+    },
+    "project5": {
+      "title": "Crypto Price Prediction",
+      "description": "Système d'extraction automatique de données depuis différentes sources en ligne pour collecter des informations sur les cryptomonnaies et construire un modèle prédictif",
+      "category": "Data Science"
+    },
+    "project6": {
+      "title": "Jeu 2D Interactif",
+      "description": "Création d'un jeu 2D avec interface fluide, mécaniques de jeu dynamiques et gestion des scores et niveaux",
+      "category": "Game Dev"
+    }
+  },
+  "education": {
+    "edu1": {
+      "institution": "ISAMM - Institut Supérieur des Arts Multimédia",
+      "degree": "Ingénierie en Génie Logiciel",
+      "period": "2023 - Présent",
+      "description": "Spécialisation en développement logiciel, intelligence artificielle et technologies multimédia"
+    },
+    "edu2": {
+      "institution": "FSEGT - Faculté des Sciences Économiques et de Gestion de Tunis",
+      "degree": "Licence en Business Intelligence",
+      "period": "2020 - 2023",
+      "description": "Formation en analyse de données, business intelligence et systèmes d'information"
+    },
+    "edu3": {
+      "institution": "Lycée Beb El Khadra - Tunis",
+      "degree": "Baccalauréat Sciences Expérimentales",
+      "period": "2019 - 2020",
+      "description": "Mention Assez Bien, spécialité Sciences Expérimentales"
+    }
+  },
+  "associations": {
+    "assoc1": {
+      "name": "Orenda Junior Entreprise",
+      "role": "Responsable Affaires Étrangères",
+      "period": "2025 - Présent"
+    },
+    "assoc2": {
+      "name": "Orenda Junior Entreprise",
+      "role": "Chargé de mission RSE",
+      "period": "2024 - 2025"
+    },
+    "assoc3": {
+      "name": "Orenda Junior Entreprise",
+      "role": "Consultant International",
+      "period": "2023 - 2024"
+    },
+    "assoc4": {
+      "name": "Club Robotique ISAMM",
+      "role": "Responsable des Ressources Humaines",
+      "period": "2023 - 2024"
+    },
+    "assoc5": {
+      "name": "JCI Étudiant FSEGT",
+      "role": "Conseiller Juridique",
+      "period": "2021 - 2022"
+    }
+  },
+  "skills": {
+    "Langages": ["Java", "Python", "C#", "JavaScript", "TypeScript", "Dart", "C"],
+    "Frontend": ["React.js", "Angular", "Flutter", "HTML/CSS"],
+    "Backend": ["Node.js", "Express.js", "Spring Boot", "FastAPI"],
+    "Bases de données": ["MongoDB", "PostgreSQL", "MySQL", "Firebase"],
+    "Outils & DevOps": ["Git", "Docker", "Kubernetes", "SUMO"]
+  },
+  "contact": {
+    "title": "Restons en",
+    "titleSuffix": "Contact",
+    "description": "Vous avez un projet en tête ? N'hésitez pas à me contacter pour discuter de vos idées.",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "availability": "Disponibilité",
+    "availabilityStatus": "Disponible pour de nouveaux projets",
+    "followMe": "Retrouvez-moi sur",
+    "emailAddress": "rezguiaziz32@gmail.com",
+    "phoneNumber": "+216 58 846 263",
+    "locationText": "Tunis, Tunisie"
+  },
+  "footer": {
+    "copyright": "© 2025 Mohamed Aziz REZGUI",
+    "rights": "Tous droits réservés",
+    "developed": "Développé Par Mohamed Aziz Rezgui • 2025",
+    "backToTop": "Retour en haut"
+  }
+}

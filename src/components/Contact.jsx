@@ -1,8 +1,10 @@
 // src/components/Contact.jsx
 import React from 'react';
 import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
+  const { t } = useTranslation();
   return (
     <section id="contact" className="py-16 md:py-24 px-4 relative overflow-hidden bg-white dark:bg-black">
       {/* Background */}
@@ -13,11 +15,11 @@ export default function Contact() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-            Restons en <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Contact</span>
+            {t('contact.title')} <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">{t('contact.titleSuffix')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto rounded-full mb-6" />
           <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto px-4">
-            Vous avez un projet en tête ? N'hésitez pas à me contacter pour discuter de vos idées.
+            {t('contact.description')}
           </p>
         </div>
 
@@ -34,8 +36,8 @@ export default function Contact() {
                 <Mail className="text-blue-500 w-6 h-6 md:w-7 md:h-7" />
               </div>
               <div className="min-w-0">
-                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-1">Email</p>
-                <p className="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base truncate">rezguiaziz32@gmail.com</p>
+                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-1">{t('contact.email')}</p>
+                <p className="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base truncate">{t('contact.emailAddress')}</p>
               </div>
             </a>
           </div>
@@ -51,8 +53,8 @@ export default function Contact() {
                 <Phone className="text-purple-500 w-6 h-6 md:w-7 md:h-7" />
               </div>
               <div>
-                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-1">Téléphone</p>
-                <p className="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base">+216 58 846 263</p>
+                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-1">{t('contact.phone')}</p>
+                <p className="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base">{t('contact.phoneNumber')}</p>
               </div>
             </a>
           </div>
@@ -65,8 +67,8 @@ export default function Contact() {
                 <MapPin className="text-blue-500 w-6 h-6 md:w-7 md:h-7" />
               </div>
               <div>
-                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-1">Localisation</p>
-                <p className="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base">Tunis, Tunisie</p>
+                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-1">{t('contact.location')}</p>
+                <p className="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base">{t('contact.locationText')}</p>
               </div>
             </div>
           </div>
@@ -81,8 +83,8 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-1">Disponibilité</p>
-                <p className="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base">Disponible pour de nouveaux projets</p>
+                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-1">{t('contact.availability')}</p>
+                <p className="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base">{t('contact.availabilityStatus')}</p>
               </div>
             </div>
           </div>
@@ -91,7 +93,7 @@ export default function Contact() {
         {/* Social Links */}
         <div className="space-y-6">
           <h3 className="text-xl md:text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white">
-            Retrouvez-moi sur
+            {t('contact.followMe')}
           </h3>
           
           <div className="grid sm:grid-cols-2 gap-4">

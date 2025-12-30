@@ -1,9 +1,11 @@
 // src/components/Projects.jsx
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { projects } from '../data/portfolioData';
 
 function ProjectCard({ project, onImageClick }) {
+  const { t } = useTranslation();
   const [currentImage, setCurrentImage] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState({});
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -74,7 +76,7 @@ function ProjectCard({ project, onImageClick }) {
               onClick={prevImage}
               disabled={isTransitioning}
               className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 dark:bg-gray-800/80 dark:hover:bg-gray-700 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10 disabled:opacity-50"
-              aria-label="Image précédente"
+              aria-label={t('projects.prevImage')}
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -82,7 +84,7 @@ function ProjectCard({ project, onImageClick }) {
               onClick={nextImage}
               disabled={isTransitioning}
               className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 dark:bg-gray-800/80 dark:hover:bg-gray-700 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10 disabled:opacity-50"
-              aria-label="Image suivante"
+              aria-label={t('projects.nextImage')}
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -118,10 +120,10 @@ function ProjectCard({ project, onImageClick }) {
       {/* Content Section */}
       <div className="p-6">
         <h3 className="text-2xl font-bold text-blue-500 mb-3 group-hover:text-blue-400 transition-colors">
-          {project.title}
+          {t(`projects.project${projects.indexOf(project) + 1}.title`)}
         </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-          {project.description}
+          {t(`projects.project${projects.indexOf(project) + 1}.description`)}
         </p>
         <div className="flex flex-wrap gap-2">
           {project.tech.map((tech) => (
@@ -139,6 +141,7 @@ function ProjectCard({ project, onImageClick }) {
 }
 
 function ImageLightbox({ images, currentIndex, onClose, onNext, onPrev }) {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -156,7 +159,7 @@ function ImageLightbox({ images, currentIndex, onClose, onNext, onPrev }) {
       <button
         onClick={onClose}
         className="absolute top-4 right-4 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full transition-all z-50"
-        aria-label="Fermer"
+        aria-label={t('footer.backToTop')}
       >
         <X className="w-6 h-6" />
       </button>
@@ -170,7 +173,7 @@ function ImageLightbox({ images, currentIndex, onClose, onNext, onPrev }) {
               onPrev();
             }}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full transition-all z-50"
-            aria-label="Image précédente"
+            aria-label={t('projects.prevImage')}
           >
             <ChevronLeft className="w-8 h-8" />
           </button>
@@ -180,7 +183,7 @@ function ImageLightbox({ images, currentIndex, onClose, onNext, onPrev }) {
               onNext();
             }}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full transition-all z-50"
-            aria-label="Image suivante"
+            aria-label={t('projects.nextImage')}
           >
             <ChevronRight className="w-8 h-8" />
           </button>
@@ -214,6 +217,7 @@ function ImageLightbox({ images, currentIndex, onClose, onNext, onPrev }) {
 }
 
 export default function Projects() {
+  const { t } = useTranslation();
   const [filter, setFilter] = useState('all');
   const [lightbox, setLightbox] = useState({ images: null, currentIndex: 0 });
   
@@ -279,7 +283,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-            Projets <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Académiques</span>
+            {t('projects.title')} <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">{t('projects.titleSuffix')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto rounded-full" />
         </div>
@@ -296,7 +300,7 @@ export default function Projects() {
                   : 'bg-blue-500/10 dark:bg-blue-500/20 border border-blue-500/30 text-gray-700 dark:text-gray-300 hover:bg-blue-500/20 dark:hover:bg-blue-500/30 hover:border-blue-500/50'
               }`}
             >
-              {category === 'all' ? 'Tous' : category}
+              {category === 'all' ? t('projects.filterAll') : t(`projects.categories.${category}`)}
             </button>
           ))}
         </div>
@@ -314,7 +318,7 @@ export default function Projects() {
 
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-600 dark:text-gray-400 text-lg">Aucun projet trouvé dans cette catégorie</p>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">{t('projects.noProjects')}</p>
           </div>
         )}
       </div>
