@@ -5,177 +5,154 @@ import { useTranslation } from 'react-i18next';
 import ThemeToggle from './ThemeToggle';
 import LanguageSwitcher from './LanguageSwitcher';
 
+const navItems = [
+  { id: 'home', label: 'nav.home' },
+  { id: 'about', label: 'nav.about' },
+  { id: 'experience', label: 'nav.experience' },
+  { id: 'projects', label: 'nav.projects' },
+  { id: 'contact', label: 'nav.contact' },
+];
+
 export default function Navbar({ activeSection, setActiveSection }) {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Set document direction for RTL languages
+  // Track which section is on screen
+  useEffect(() => {
+    const els = navItems.map((i) => document.getElementById(i.id)).filter(Boolean);
+    if (!els.length || typeof IntersectionObserver === 'undefined') return undefined;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActiveSection(e.target.id);
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px' }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [setActiveSection]);
+
+  // RTL for Arabic
   useEffect(() => {
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
   }, [i18n.language]);
 
-  // Prevent body scroll when menu is open
+  // Lock body scroll when the mobile menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
     return () => {
       document.body.style.overflow = 'auto';
     };
   }, [isMenuOpen]);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
     setActiveSection(sectionId);
     setIsMenuOpen(false);
   };
 
-  const navItems = [
-    { id: 'home', label: 'nav.home' },
-    { id: 'about', label: 'nav.about' },
-    { id: 'experience', label: 'nav.experience' },
-    { id: 'projects', label: 'nav.projects' },
-    { id: 'contact', label: 'nav.contact' }
-  ];
+  const solid = scrolled && !isMenuOpen;
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/90 dark:bg-black/90 backdrop-blur-xl border-b border-blue-500/30 shadow-lg shadow-blue-500/10' 
-          : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 md:h-20">
-            {/* Logo */}
-            <button 
-              onClick={() => scrollToSection('home')}
-              className="group flex items-center space-x-2 relative z-[60]"
-            >
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg blur-lg opacity-50 group-hover:opacity-100 transition-opacity" />
-                <div className="relative text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent px-3 md:px-4 py-2">
-                  MAR
-                </div>
-              </div>
-            </button>
-            
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-4">
-              <div className="flex space-x-1">
-                {navItems.map((item) => (
-                  <NavItem
-                    key={item.id}
-                    item={item}
-                    isActive={activeSection === item.id}
-                    onClick={() => scrollToSection(item.id)}
-                  />
-                ))}
-              </div>
-              
-              {/* Theme Toggle & Language Switcher */}
-              <div className="flex items-center gap-2">
-                <ThemeToggle />
-                <LanguageSwitcher />
-              </div>
-            </div>
+      <nav className="fixed top-3 md:top-4 inset-x-0 z-50 px-3 md:px-6">
+        <div
+          className={`max-w-5xl mx-auto h-14 rounded-full px-2.5 flex items-center justify-between ${
+            solid ? 'nav-solid' : 'nav-clear'
+          }`}
+        >
+          {/* Avatar */}
+          <button
+            onClick={() => scrollToSection('home')}
+            className="relative z-[60] w-9 h-9 rounded-full overflow-hidden border border-[var(--line-strong)] shrink-0"
+            aria-label="Home"
+          >
+            {!imageError ? (
+              <img
+                src={`${import.meta.env.BASE_URL}images/profile.png`}
+                alt=""
+                className="w-full h-full object-cover object-top"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <span className="block w-full h-full bg-[var(--paper-3)]" />
+            )}
+          </button>
 
-            {/* Mobile Menu & Theme Toggle */}
-            <div className="md:hidden flex items-center gap-2 relative z-[60]">
-              <ThemeToggle />
-              <LanguageSwitcher />
+          {/* Desktop menu */}
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
               <button
-                className="text-blue-500 hover:text-blue-400 transition-colors p-2"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`px-4 py-2 rounded-full text-[0.8rem] font-medium transition-all duration-300 ${
+                  activeSection === item.id
+                    ? 'bg-[var(--fg)] text-[color:var(--inv)]'
+                    : 'opacity-70 hover:opacity-100 hover:bg-[var(--card-hover)]'
+                }`}
               >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {t(item.label)}
               </button>
-            </div>
+            ))}
+          </div>
+
+          <div className="hidden md:flex items-center gap-2">
+            <ThemeToggle />
+            <LanguageSwitcher />
+          </div>
+
+          {/* Mobile controls */}
+          <div className="md:hidden flex items-center gap-2 relative z-[60]">
+            <ThemeToggle />
+            <LanguageSwitcher />
+            <button
+              className="icon-btn"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
+            </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      <div 
-        className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ${
+      {/* Mobile overlay */}
+      <div
+        className={`md:hidden fixed inset-0 z-40 transition-all duration-500 ${
           isMenuOpen ? 'visible' : 'invisible'
         }`}
       >
-        {/* Backdrop */}
-        <div 
-          className={`absolute inset-0 bg-white/98 dark:bg-black/98 backdrop-blur-2xl transition-opacity duration-300 ${
+        <div
+          className={`absolute inset-0 surface-ink transition-opacity duration-500 ${
             isMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}
           onClick={() => setIsMenuOpen(false)}
         />
-        
-        {/* Menu Content */}
-        <div className={`relative h-full flex flex-col items-center justify-center space-y-6 transition-all duration-300 ${
-          isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-        }`}>
+        <div className="relative h-full flex flex-col items-start justify-center gap-3 px-8">
           {navItems.map((item, index) => (
-            <MobileNavItem
+            <button
               key={item.id}
-              item={item}
-              isActive={activeSection === item.id}
               onClick={() => scrollToSection(item.id)}
-              delay={index * 50}
-              isMenuOpen={isMenuOpen}
-            />
+              className={`font-display text-4xl text-[#f4f4f6] px-6 py-2 rounded-full transition-all duration-700 ${
+                isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              } ${activeSection === item.id ? 'bg-white/10' : 'opacity-70'}`}
+              style={{ transitionDelay: isMenuOpen ? `${150 + index * 70}ms` : '0ms' }}
+            >
+              {t(item.label)}
+            </button>
           ))}
         </div>
       </div>
     </>
-  );
-}
-
-// Helper component to handle translation for nav items
-function NavItem({ item, isActive, onClick }) {
-  const { t } = useTranslation();
-  return (
-    <button
-      onClick={onClick}
-      className={`relative px-4 py-2 rounded-lg transition-all duration-300 ${
-        isActive
-          ? 'text-blue-500'
-          : 'text-gray-600 dark:text-gray-300 hover:text-blue-500'
-      }`}
-    >
-      {t(item.label)}
-      {isActive && (
-        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full" />
-      )}
-    </button>
-  );
-}
-
-// Helper component for mobile nav items
-function MobileNavItem({ item, isActive, onClick, delay, isMenuOpen }) {
-  const { t } = useTranslation();
-  return (
-    <button
-      onClick={onClick}
-      className={`text-2xl font-semibold transition-all duration-300 hover:text-blue-500 hover:scale-110 ${
-        isActive ? 'text-blue-500 scale-110' : 'text-gray-700 dark:text-gray-300'
-      }`}
-      style={{
-        transitionDelay: isMenuOpen ? `${delay}ms` : '0ms'
-      }}
-    >
-      {t(item.label)}
-    </button>
   );
 }

@@ -1,96 +1,103 @@
 // src/components/Experience.jsx
 import React from 'react';
-import { Briefcase, Calendar } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Reveal, Words } from './Motion';
 import { experiences } from '../data/portfolioData';
 
 export default function Experience() {
   const { t } = useTranslation();
+
+  const itemsRaw = t('experience.exp1.items', { returnObjects: true });
+  const items = Array.isArray(itemsRaw) ? itemsRaw : [];
+  const featured = experiences[0];
+  const others = experiences.slice(1);
+
   return (
-    <section id="experience" className="py-16 md:py-24 px-4 relative overflow-hidden bg-white dark:bg-black">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-purple-50/30 to-gray-50 dark:from-black dark:via-purple-900/10 dark:to-black" />
-      <div className="absolute bottom-20 left-20 w-64 h-64 md:w-96 md:h-96 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-3xl" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-4">
-            <div className="p-2.5 md:p-3 bg-purple-500/10 dark:bg-purple-500/20 rounded-2xl border border-purple-500/30">
-              <Briefcase className="text-purple-500 w-7 h-7 md:w-8 md:h-8" />
+    <section id="experience" className="surface-ink grain relative px-6 py-20 md:py-28">
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Heading */}
+        <Reveal>
+          <span className="pill mb-5">{t('experience.label')}</span>
+        </Reveal>
+        <h2 className="font-display text-3xl md:text-5xl leading-[1.1] max-w-3xl">
+          <Words text={t('experience.title')} />
+        </h2>
+
+        {/* Featured: end of studies project */}
+        <Reveal delay={150} className="mt-12 md:mt-16 card p-6 sm:p-8 md:p-10">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-10">
+            <div className="lg:col-span-4">
+              <span className="pill">{t('experience.featured')}</span>
+              <h3 className="font-display text-2xl md:text-3xl mt-6 leading-tight">
+                {featured.company}
+              </h3>
+              <p className="mt-2 text-sm">{t('experience.exp1.role')}</p>
+              <p className="eyebrow mt-3">{t('experience.exp1.period')}</p>
+              <p className="t-muted text-sm mt-6 leading-relaxed">{t('experience.exp1.summary')}</p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white text-center">
-              {t('experience.title')} <span className="bg-gradient-to-r from-purple-400 to-blue-600 bg-clip-text text-transparent">{t('experience.titleSuffix')}</span>
-            </h2>
-          </div>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-blue-600 mx-auto rounded-full" />
-        </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Timeline Line - Hidden on mobile, visible on lg screens */}
-          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-purple-500/50 via-blue-500/50 to-purple-500/50" />
-
-          <div className="space-y-8 md:space-y-12">
-            {experiences.map((exp, index) => (
-              <div 
-                key={index} 
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                }`}
-              >
-                {/* Timeline Dot - Hidden on mobile */}
-                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full border-4 border-white dark:border-black z-10">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-md" />
-                </div>
-
-                {/* Content Card */}
-                <div className={`w-full lg:w-[calc(50%-3rem)] ${
-                  index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'
-                }`}>
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-                    <div className="relative bg-white dark:bg-gray-900 p-5 md:p-6 rounded-3xl border border-purple-500/20 dark:border-purple-500/30 backdrop-blur-sm hover:border-purple-500/40 transition-all duration-300 hover:scale-[1.02] shadow-lg">
-                      {/* Company Info */}
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-3 md:gap-4">
-                          <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-purple-500/20 to-blue-500/20 dark:from-purple-500/30 dark:to-blue-500/30 rounded-2xl border border-purple-500/30 flex items-center justify-center flex-shrink-0">
-                            <Briefcase className="text-purple-500 w-5 h-5 md:w-6 md:h-6" />
-                          </div>
-                          <div className="min-w-0">
-                            <h3 className="text-xl md:text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
-                              {t(`experience.exp${index + 1}.company`)}
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base">{t(`experience.exp${index + 1}.role`)}</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-2 text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-4">
-                        <Calendar className="w-4 h-4" />
-                        <span>{t(`experience.exp${index + 1}.period`)}</span>
-                      </div>
-
-                      <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
-                        {t(`experience.exp${index + 1}.description`)}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {exp.tech.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2.5 md:px-3 py-1 md:py-1.5 bg-gradient-to-r from-purple-500/20 to-blue-500/20 dark:from-purple-500/30 dark:to-blue-500/30 border border-purple-500/40 rounded-full text-xs font-medium hover:from-purple-500/30 hover:to-blue-500/30 dark:hover:from-purple-500/40 dark:hover:to-blue-500/40 transition-all text-gray-700 dark:text-gray-300"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+            <div className="lg:col-span-8 grid sm:grid-cols-2 gap-3">
+              {items.map((item, i) => (
+                <Reveal
+                  key={item.title}
+                  delay={(i % 2) * 120}
+                  className="card card-hover p-5"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[var(--fg)] text-[color:var(--inv)] text-[0.7rem] font-semibold shrink-0">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h4 className="font-display text-base md:text-lg">{item.title}</h4>
                   </div>
-                </div>
-              </div>
+                  <p className="text-xs t-muted mt-4 leading-relaxed">{item.need}</p>
+                  <p className="text-sm mt-2 leading-relaxed">{item.solution}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2 mt-8 pt-8 border-t b-line">
+            {featured.tech.map((tech) => (
+              <span key={tech} className="chip">
+                {tech}
+              </span>
             ))}
           </div>
+        </Reveal>
+
+        {/* Internships */}
+        <div className="mt-6 space-y-3">
+          {others.map((exp, i) => {
+            const n = i + 2;
+            return (
+              <Reveal
+                key={exp.company}
+                className="card card-hover p-6 grid md:grid-cols-12 gap-4 md:gap-8 items-start"
+              >
+                <div className="md:col-span-3">
+                  <span className="pill">{t(`experience.exp${n}.period`)}</span>
+                </div>
+
+                <div className="md:col-span-3">
+                  <h3 className="font-display text-lg md:text-xl">{exp.company}</h3>
+                  <p className="t-muted mt-1 text-xs">{t(`experience.exp${n}.role`)}</p>
+                </div>
+
+                <div className="md:col-span-6">
+                  <p className="text-sm leading-relaxed t-muted">
+                    {t(`experience.exp${n}.description`)}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {exp.tech.map((tech) => (
+                      <span key={tech} className="chip">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

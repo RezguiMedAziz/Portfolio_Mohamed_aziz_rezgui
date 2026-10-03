@@ -1,118 +1,170 @@
 {
   "nav": {
     "home": "Accueil",
-    "about": "À Propos",
+    "about": "À propos",
     "experience": "Expérience",
     "projects": "Projets",
     "contact": "Contact"
   },
   "hero": {
-    "title": "Bonjour, je suis",
-    "name": "Mohamed Aziz REZGUI",
-    "subtitle": "Élève Ingénieur en Génie Logiciel",
-    "description": "Passionné par le développement d'applications innovantes et l'optimisation de solutions techniques. Je transforme des idées en expériences numériques exceptionnelles.",
-    "ctaContact": "Me Contacter",
-    "ctaProjects": "Voir Mes Projets",
-    "ctaCV": "CV"
+    "label": "Portfolio 2026",
+    "location": "Tunis, Tunisie",
+    "greeting": "Bonjour, je suis",
+    "firstName": "Mohamed Aziz",
+    "lastName": "Rezgui",
+    "subtitle": "Ingénieur Logiciel",
+    "roles": ["Ingénieur Full Stack", "Passionné de Data & IA", "Curieux de DevOps"],
+    "description": "Ingénieur logiciel polyvalent et motivé, prêt à contribuer dès le premier jour. Solide base full stack, passion pour la data et l'IA, et intérêt croissant pour le DevOps et le cloud.",
+    "ctaContact": "Me contacter",
+    "ctaProjects": "Voir mes projets",
+    "ctaCV": "Télécharger le CV",
+    "scroll": "Défiler"
+  },
+  "intro": {
+    "label": "Philosophie",
+    "quote": "Je transforme de vrais besoins en logiciels fiables et intelligents.",
+    "text": "Des produits Spring Boot et Angular aux services data et machine learning en Python, chaque solution part d'un besoin utilisateur réel et est conçue pour tourner en production.",
+    "cta": "Découvrir mes projets",
+    "stats": {
+      "internships": "Stages",
+      "pfe": "Mois de projet de fin d'études",
+      "curious": "Curieux des nouvelles technologies",
+      "learner": "Apprentissage rapide"
+    }
   },
   "about": {
-    "title": "À Propos",
-    "titleSuffix": "Moi",
+    "label": "qui suis-je ?",
+    "title": "À propos de moi",
+    "bio": "Je suis un ingénieur logiciel qui construit sur toute la chaîne, des produits Spring Boot et Angular aux services data et machine learning en Python. Mon projet de fin d'études de six mois, une plateforme fintech complète pilotée par l'IA, s'appuie sur cinq stages en web, mobile et data. J'aime transformer de vrais besoins en solutions fiables et je continue d'explorer la data, l'IA et le DevOps.",
+    "basedIn": "Basé à",
+    "basedInValue": "Tunis, Tunisie",
+    "languagesTitle": "Langues",
+    "languages": [
+      { "name": "Anglais", "level": "Avancé" },
+      { "name": "Français", "level": "Avancé" },
+      { "name": "Arabe", "level": "Langue maternelle" }
+    ],
     "education": "Formation",
-    "associations": "Vie Associative",
-    "skills": "Compétences Techniques"
+    "associations": "Vie associative",
+    "skills": "Compétences techniques"
   },
   "experience": {
-    "title": "Expériences",
-    "titleSuffix": "Professionnelles",
+    "label": "Parcours",
+    "title": "Expériences professionnelles",
+    "featured": "Projet de fin d'études",
     "exp1": {
-      "company": "Blue Jet Engineering",
-      "role": "Développeur Full Stack",
-      "period": "Juillet - Août 2025",
-      "description": "Développement d'une application mobile de contrôle et supervision de ferme, conçue pour optimiser la gestion quotidienne et anticiper les maladies grâce à l'analyse de facteurs clés"
+      "role": "Ingénieur Logiciel, Projet de fin d'études",
+      "period": "Fév 2026 – Août 2026",
+      "summary": "IZI Supervision : une plateforme intelligente de supervision et d'analyse pour IZI Wallet de la Banque Zitouna, livrée en six sprints.",
+      "items": [
+        {
+          "title": "Supervision",
+          "need": "Les clients et administrateurs manquaient de visibilité sur l'activité du portefeuille.",
+          "solution": "Une plateforme web sécurisée avec des tableaux de bord en temps réel pour les deux profils."
+        },
+        {
+          "title": "Données",
+          "need": "Les données de production brutes n'étaient pas prêtes pour l'analyse.",
+          "solution": "Un pipeline ETL automatisé alimentant un entrepôt de données validé, avec des contrôles qualité intégrés."
+        },
+        {
+          "title": "Détection de fraude",
+          "need": "Les comportements suspects devaient être détectés et justifiés.",
+          "solution": "Un moteur hybride combinant segmentation des clients, score de risque et détection d'anomalies en un niveau de risque explicable."
+        },
+        {
+          "title": "Assistant IA",
+          "need": "Les utilisateurs avaient besoin d'une aide instantanée dans leur langue.",
+          "solution": "Un chatbot multilingue propulsé par des LLM, ancré dans la connaissance bancaire via RAG, capable de détecter l'intention de l'utilisateur pour déclencher des actions."
+        },
+        {
+          "title": "Analyses financières",
+          "need": "Les utilisateurs peinaient à anticiper leurs finances.",
+          "solution": "Un moteur de recommandation pour la prédiction des factures, les prévisions de dépenses, l'optimisation du budget et le score de santé financière, actualisé par un pipeline nocturne."
+        },
+        {
+          "title": "Mobile",
+          "need": "La plateforme devait atteindre les utilisateurs sur mobile.",
+          "solution": "Une application Flutter réutilisant le même backend, sans duplication de la logique métier."
+        }
+      ]
     },
     "exp2": {
-      "company": "IT Progress",
-      "role": "Développeur Full Stack",
-      "period": "Juillet - Août 2024",
-      "description": "Conception et développement d'une application de gestion de laboratoire pour automatiser la gestion des équipements, stocks, utilisateurs, et des tâches et tests réalisés"
+      "role": "Stagiaire en génie logiciel",
+      "period": "Juil 2025 – Août 2025",
+      "description": "Les exploitants agricoles devaient anticiper les problèmes de santé du bétail. La solution proposée était une application mobile de suivi et de contrôle de la ferme, signalant les risques à partir de facteurs environnementaux clés."
     },
     "exp3": {
-      "company": "Comar Assurances",
-      "role": "Développeur Full Stack",
-      "period": "Février - Juin 2023",
-      "description": "Conception et développement d'une application web pour la mécanisation et la centralisation des méthodes de paiement"
+      "role": "Stagiaire en génie logiciel",
+      "period": "Juil 2024 – Août 2024",
+      "description": "Un laboratoire devait remplacer son suivi manuel. La solution proposée était une application automatisant les flux d'équipements, de stocks, d'utilisateurs et de tests."
     },
     "exp4": {
-      "company": "Tunisair",
-      "role": "Développeur Full Stack",
-      "period": "Juillet - Août 2022",
-      "description": "Conception et développement d'une application web pour la gestion des billets d'avion"
+      "role": "Stagiaire en génie logiciel",
+      "period": "Fév 2023 – Juin 2023",
+      "description": "L'entreprise avait besoin d'un point central pour ses méthodes de paiement. La solution proposée était une application web qui les numérise et les centralise."
+    },
+    "exp5": {
+      "role": "Stagiaire en génie logiciel",
+      "period": "Juil 2022 – Août 2022",
+      "description": "La compagnie aérienne avait besoin d'une gestion numérique des billets d'avion. La solution proposée était une application web de gestion des billets."
     }
   },
   "projects": {
-    "title": "Projets",
-    "titleSuffix": "Académiques",
+    "label": "Sélection",
+    "title": "Projets académiques",
     "prevImage": "Image précédente",
     "nextImage": "Image suivante",
-    "viewMore": "Voir Plus",
     "noProjects": "Aucun projet trouvé dans cette catégorie",
     "filterAll": "Tous",
     "categories": {
       "Web": "Web",
       "IA & ML": "IA & ML",
       "Mobile & IoT": "Mobile & IoT",
-      "Data Science": "Science des Données",
-      "Game Dev": "Développement de Jeux"
+      "Data Science": "Science des données"
     },
     "project1": {
-      "title": "Gestion du Cycle d'Ingénieur",
-      "description": "Application web de gestion des parcours académiques des élèves ingénieurs, depuis l'intégration jusqu'à la diplomation",
-      "category": "Web"
+      "title": "IZI Supervision",
+      "description": "Les clients et administrateurs du wallet manquaient de visibilité et d'alertes précoces. La solution proposée est une plateforme de supervision pilotée par l'IA, combinant tableaux de bord en temps réel, détection de fraude, assistant LLM multilingue avec RAG et détection d'intention, et analyses financières."
     },
     "project2": {
-      "title": "Simulation de Trafic en Temps Réel",
-      "description": "Développement d'une solution permettant de simuler le trafic urbain et d'optimiser la circulation à l'aide d'un tableau de bord interactif en utilisant l'apprentissage par renforcement",
-      "category": "IA & ML"
+      "title": "Plateforme de signalement d'incidents",
+      "description": "Les problèmes urbains mettaient du temps à atteindre les autorités. La solution proposée permet aux citoyens de photographier un incident et de le signaler, afin que les services publics puissent le recevoir, le traiter et le résoudre."
     },
     "project3": {
-      "title": "Street Incident Reporter",
-      "description": "Application web permettant aux citoyens de signaler les incidents urbains (nids-de-poule, infrastructures endommagées) pour faciliter l'intervention des autorités gouvernementales",
-      "category": "Web"
+      "title": "Simulation de trafic en temps réel",
+      "description": "La congestion urbaine avait besoin d'un contrôle plus intelligent. La solution proposée est un agent d'apprentissage par renforcement qui optimise un trafic urbain simulé, avec un tableau de bord interactif."
     },
     "project4": {
-      "title": "Smart Farm Mobile App",
-      "description": "Application mobile connectée à un système IoT pour le suivi en temps réel des données environnementales d'une smart farm. Contrôle à distance des équipements (caméras, pompes)",
-      "category": "Mobile & IoT"
+      "title": "Gestion du cycle d'ingénieur",
+      "description": "Les écoles devaient suivre les élèves ingénieurs de l'admission à la diplomation. La solution proposée est une plateforme web qui gère tout le parcours académique en un seul endroit."
     },
     "project5": {
-      "title": "Crypto Price Prediction",
-      "description": "Système d'extraction automatique de données depuis différentes sources en ligne pour collecter des informations sur les cryptomonnaies et construire un modèle prédictif",
-      "category": "Data Science"
+      "title": "Application mobile de ferme intelligente",
+      "description": "Les agriculteurs devaient superviser leur ferme et leurs équipements à distance. La solution proposée est une application mobile connectée à un système IoT pour les données environnementales en direct et le contrôle à distance des caméras et pompes à eau."
     },
     "project6": {
-      "title": "Jeu 2D Interactif",
-      "description": "Création d'un jeu 2D avec interface fluide, mécaniques de jeu dynamiques et gestion des scores et niveaux",
-      "category": "Game Dev"
+      "title": "Prédiction du prix des cryptomonnaies",
+      "description": "Les investisseurs devaient anticiper les tendances du marché à partir de sources dispersées. La solution proposée est un pipeline de collecte automatique de données alimentant un modèle prédictif de tendances."
     }
   },
   "education": {
     "edu1": {
-      "institution": "ISAMM - Institut Supérieur des Arts Multimédia",
-      "degree": "Ingénierie en Génie Logiciel",
-      "period": "2023 - Présent",
+      "institution": "ISAMM, Institut Supérieur des Arts Multimédia de la Manouba",
+      "degree": "Diplôme d'ingénieur en informatique et multimédia, spécialité Génie Logiciel",
+      "period": "2023 – 2026",
       "description": "Spécialisation en développement logiciel, intelligence artificielle et technologies multimédia"
     },
     "edu2": {
-      "institution": "FSEGT - Faculté des Sciences Économiques et de Gestion de Tunis",
+      "institution": "FSEGT, Faculté des Sciences Économiques et de Gestion de Tunis",
       "degree": "Licence en Business Intelligence",
-      "period": "2020 - 2023",
+      "period": "2020 – 2023",
       "description": "Formation en analyse de données, business intelligence et systèmes d'information"
     },
     "edu3": {
-      "institution": "Lycée Beb El Khadra - Tunis",
-      "degree": "Baccalauréat Sciences Expérimentales",
-      "period": "2019 - 2020",
+      "institution": "Lycée Beb El Khadhra, Tunis",
+      "degree": "Baccalauréat, Sciences Expérimentales",
+      "period": "2019 – 2020",
       "description": "Mention Assez Bien, spécialité Sciences Expérimentales"
     }
   },
@@ -120,54 +172,52 @@
     "assoc1": {
       "name": "Orenda Junior Entreprise",
       "role": "Responsable Affaires Étrangères",
-      "period": "2025 - Présent"
+      "period": "2025 – Juil 2026"
     },
     "assoc2": {
       "name": "Orenda Junior Entreprise",
       "role": "Chargé de mission RSE",
-      "period": "2024 - 2025"
+      "period": "2024 – 2025"
     },
     "assoc3": {
       "name": "Orenda Junior Entreprise",
       "role": "Consultant International",
-      "period": "2023 - 2024"
+      "period": "2024 – 2025"
     },
     "assoc4": {
       "name": "Club Robotique ISAMM",
       "role": "Responsable des Ressources Humaines",
-      "period": "2023 - 2024"
+      "period": "2023 – 2024"
     },
     "assoc5": {
       "name": "JCI Étudiant FSEGT",
       "role": "Conseiller Juridique",
-      "period": "2021 - 2022"
+      "period": "2021 – 2022"
     }
   },
   "skills": {
-    "Langages": ["Java", "Python", "C#", "JavaScript", "TypeScript", "Dart", "C"],
-    "Frontend": ["React.js", "Angular", "Flutter", "HTML/CSS"],
-    "Backend": ["Node.js", "Express.js", "Spring Boot", "FastAPI"],
-    "Bases de données": ["MongoDB", "PostgreSQL", "MySQL", "Firebase"],
-    "Outils & DevOps": ["Git", "Docker", "Kubernetes", "SUMO"]
+    "Langages": ["Java", "Python", "C#", "JavaScript", "TypeScript", "Dart", "C", "HTML/CSS"],
+    "Backend": ["Spring Boot", "Spring Security", "FastAPI", "Express.js", "Node.js"],
+    "Frontend & Mobile": ["Angular", "React.js", "Flutter", "React Native"],
+    "Data & IA": ["scikit-learn", "pandas", "NumPy", "Prophet", "Intégration de LLM", "RAG", "Ollama", "Hugging Face"],
+    "Bases de données": ["PostgreSQL", "pgvector", "MySQL", "MongoDB", "Firebase"],
+    "Outils & DevOps": ["Git", "Docker", "Kubernetes"]
   },
   "contact": {
-    "title": "Restons en",
-    "titleSuffix": "Contact",
-    "description": "Vous avez un projet en tête ? N'hésitez pas à me contacter pour discuter de vos idées.",
-    "email": "Email",
+    "label": "Contact",
+    "heading": "Travaillons ensemble.",
+    "description": "Vous avez un projet ou une opportunité en tête ? J'aimerais en discuter et voir comment je peux contribuer.",
     "phone": "Téléphone",
     "location": "Localisation",
+    "locationText": "Tunis, Tunisie",
     "availability": "Disponibilité",
-    "availabilityStatus": "Disponible pour de nouveaux projets",
-    "followMe": "Retrouvez-moi sur",
-    "emailAddress": "rezguiaziz32@gmail.com",
-    "phoneNumber": "+216 58 846 263",
-    "locationText": "Tunis, Tunisie"
+    "availabilityStatus": "Ouvert aux opportunités",
+    "emailAddress": "rezguiaziz32@gmail.com"
   },
   "footer": {
-    "copyright": "© 2025 Mohamed Aziz REZGUI",
+    "copyright": "© 2026 Mohamed Aziz Rezgui",
     "rights": "Tous droits réservés",
-    "developed": "Développé Par Mohamed Aziz Rezgui • 2025",
+    "developed": "Conçu et développé par Mohamed Aziz Rezgui",
     "backToTop": "Retour en haut"
   }
 }

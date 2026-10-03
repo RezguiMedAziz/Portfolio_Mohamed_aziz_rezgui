@@ -1,108 +1,161 @@
 // src/components/About.jsx
-import React from 'react';
-import { GraduationCap, Award, Code2, Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { Download, MapPin, User } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { skills, education, associations } from '../data/portfolioData';
+import { Reveal, Words } from './Motion';
+import { education, associations } from '../data/portfolioData';
 
 export default function About() {
   const { t } = useTranslation();
+  const [imageError, setImageError] = useState(false);
+
+  const languagesRaw = t('about.languages', { returnObjects: true });
+  const languages = Array.isArray(languagesRaw) ? languagesRaw : [];
+  const skills = t('skills', { returnObjects: true });
+
   return (
-    <section id="about" className="py-16 md:py-24 px-4 relative overflow-hidden bg-gray-50 dark:bg-black">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-white dark:from-black dark:via-blue-900/10 dark:to-black" />
-      <div className="absolute top-20 right-20 w-64 h-64 md:w-96 md:h-96 bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-3xl" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-            {t('about.title')} <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">{t('about.titleSuffix')}</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto rounded-full" />
-        </div>
-
-        {/* Education & Associations */}
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
-          {/* Education Card */}
-          <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-            <div className="relative bg-white dark:bg-gray-900 p-6 md:p-8 rounded-3xl border border-blue-500/20 dark:border-blue-500/30 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300 shadow-lg">
-              <div className="flex items-center gap-3 md:gap-4 mb-6">
-                <div className="p-2.5 md:p-3 bg-blue-500/10 dark:bg-blue-500/20 rounded-2xl border border-blue-500/30">
-                  <GraduationCap className="text-blue-500 w-7 h-7 md:w-8 md:h-8" />
+    <section id="about" className="surface-paper-2 px-6 py-20 md:py-28">
+      <div className="max-w-6xl mx-auto">
+        {/* Portrait and bio */}
+        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+          <div className="md:col-span-4">
+            <Reveal
+              variant="mask"
+              className="img-reveal relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-[var(--paper-3)] max-w-xs mx-auto md:max-w-none"
+            >
+              {!imageError ? (
+                <img
+                  src={`${import.meta.env.BASE_URL}images/profile.png`}
+                  alt="Mohamed Aziz Rezgui"
+                  className="w-full h-full object-cover object-top"
+                  onError={() => setImageError(true)}
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center t-muted">
+                  <User size={64} strokeWidth={1} />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">{t('about.education')}</h3>
-              </div>
-              
-              <div className="space-y-5 md:space-y-6">
-                {education.map((edu, index) => (
-                  <div key={index} className="relative pl-5 md:pl-6 border-l-2 border-blue-500/30 hover:border-blue-500/60 transition-colors">
-                    <div className="absolute -left-[9px] top-0 w-4 h-4 bg-blue-500 rounded-full" />
-                    <h4 className="font-bold text-blue-500 text-base md:text-lg mb-1">{t(`education.edu${index + 1}.institution`)}</h4>
-                    <p className="text-gray-700 dark:text-gray-300 font-medium text-sm md:text-base">{t(`education.edu${index + 1}.degree`)}</p>
-                    <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-2">{t(`education.edu${index + 1}.period`)}</p>
-                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">{t(`education.edu${index + 1}.description`)}</p>
-                  </div>
+              )}
+            </Reveal>
+          </div>
+
+          <div className="md:col-span-8 md:ps-6">
+            <Reveal>
+              <span className="pill mb-5">{t('about.label')}</span>
+            </Reveal>
+            <h2 className="font-display text-3xl md:text-5xl leading-[1.1]">
+              <Words text={t('about.title')} />
+            </h2>
+
+            <Reveal delay={200}>
+              <p className="t-muted mt-6 text-sm md:text-base leading-relaxed max-w-xl">
+                {t('about.bio')}
+              </p>
+            </Reveal>
+
+            <Reveal delay={300}>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <span className="pill">
+                  <MapPin size={13} />
+                  {t('about.basedInValue')}
+                </span>
+                {languages.map((l) => (
+                  <span key={l.name} className="pill">
+                    {l.name} <span className="t-muted">· {l.level}</span>
+                  </span>
                 ))}
               </div>
+            </Reveal>
+
+            <Reveal delay={400}>
+              <div className="flex flex-wrap gap-3 mt-9">
+                <a
+                  href={`${import.meta.env.BASE_URL}cv.pdf`}
+                  download
+                  className="btn btn-solid"
+                >
+                  <Download size={15} />
+                  <span>{t('hero.ctaCV')}</span>
+                </a>
+                <a href="#contact" className="btn btn-outline">
+                  {t('hero.ctaContact')}
+                </a>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* Education and associations */}
+        <div className="grid lg:grid-cols-2 gap-12 mt-20 md:mt-28">
+          <div>
+            <Reveal>
+              <h3 className="font-display text-xl md:text-2xl mb-5">{t('about.education')}</h3>
+            </Reveal>
+            <div className="space-y-3">
+              {education.map((_, index) => (
+                <Reveal
+                  key={index}
+                  delay={index * 100}
+                  className="card card-hover p-5 md:p-6"
+                >
+                  <p className="eyebrow">{t(`education.edu${index + 1}.period`)}</p>
+                  <h4 className="font-display text-base md:text-lg mt-2 leading-snug">
+                    {t(`education.edu${index + 1}.degree`)}
+                  </h4>
+                  <p className="text-sm mt-1">{t(`education.edu${index + 1}.institution`)}</p>
+                  <p className="text-xs t-muted mt-2 leading-relaxed">
+                    {t(`education.edu${index + 1}.description`)}
+                  </p>
+                </Reveal>
+              ))}
             </div>
           </div>
 
-          {/* Associations Card */}
-          <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-            <div className="relative bg-white dark:bg-gray-900 p-6 md:p-8 rounded-3xl border border-purple-500/20 dark:border-purple-500/30 backdrop-blur-sm hover:border-purple-500/40 transition-all duration-300 shadow-lg">
-              <div className="flex items-center gap-3 md:gap-4 mb-6">
-                <div className="p-2.5 md:p-3 bg-purple-500/10 dark:bg-purple-500/20 rounded-2xl border border-purple-500/30">
-                  <Award className="text-purple-500 w-7 h-7 md:w-8 md:h-8" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">{t('about.associations')}</h3>
-              </div>
-              
-              <div className="space-y-3 md:space-y-4">
-                {associations.map((assoc, index) => (
-                  <div key={index} className="p-3.5 md:p-4 bg-purple-500/5 dark:bg-purple-500/10 rounded-xl border border-purple-500/20 dark:border-purple-500/30 hover:bg-purple-500/10 dark:hover:bg-purple-500/20 hover:border-purple-500/40 transition-all">
-                    <h4 className="font-bold text-purple-500 text-sm md:text-base">{t(`associations.assoc${index + 1}.name`)}</h4>
-                    <p className="text-gray-700 dark:text-gray-300 text-xs md:text-sm">{t(`associations.assoc${index + 1}.role`)}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{t(`associations.assoc${index + 1}.period`)}</p>
+          <div>
+            <Reveal>
+              <h3 className="font-display text-xl md:text-2xl mb-5">{t('about.associations')}</h3>
+            </Reveal>
+            <div className="space-y-3">
+              {associations.map((_, index) => (
+                <Reveal
+                  key={index}
+                  delay={index * 80}
+                  className="card card-hover px-5 py-4 flex items-center justify-between gap-4"
+                >
+                  <div>
+                    <h4 className="font-display text-sm md:text-base">
+                      {t(`associations.assoc${index + 1}.role`)}
+                    </h4>
+                    <p className="text-xs t-muted mt-1">
+                      {t(`associations.assoc${index + 1}.name`)}
+                    </p>
                   </div>
-                ))}
-              </div>
+                  <span className="pill shrink-0">{t(`associations.assoc${index + 1}.period`)}</span>
+                </Reveal>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Skills Section */}
-        <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl blur-xl" />
-          <div className="relative bg-white dark:bg-gray-900 p-6 md:p-8 rounded-3xl border border-blue-500/20 dark:border-blue-500/30 backdrop-blur-sm shadow-lg">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-6 md:mb-8">
-              <div className="p-2.5 md:p-3 bg-blue-500/10 dark:bg-blue-500/20 rounded-2xl border border-blue-500/30">
-                <Code2 className="text-blue-500 w-7 h-7 md:w-8 md:h-8" />
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white">{t('about.skills')}</h3>
-            </div>
-            
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-              {Object.entries(t('skills', { returnObjects: true })).map(([category, items]) => (
-                <div key={category} className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <Zap className="text-blue-500 w-4 h-4 md:w-5 md:h-5" />
-                    <h4 className="font-bold text-blue-500 text-base md:text-lg">{category}</h4>
-                  </div>
+        {/* Skills */}
+        <div className="mt-20 md:mt-28">
+          <Reveal>
+            <h3 className="font-display text-xl md:text-2xl mb-5">{t('about.skills')}</h3>
+          </Reveal>
+          <div className="grid md:grid-cols-2 gap-3">
+            {skills &&
+              typeof skills === 'object' &&
+              Object.entries(skills).map(([category, items], i) => (
+                <Reveal key={category} delay={i * 70} className="card card-hover p-5 md:p-6">
+                  <p className="eyebrow mb-4">{category}</p>
                   <div className="flex flex-wrap gap-2">
                     {items.map((skill) => (
-                      <span
-                        key={skill}
-                        className="group/skill px-3 md:px-4 py-1.5 md:py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 border border-blue-500/30 rounded-full text-xs md:text-sm font-medium hover:from-blue-500/20 hover:to-purple-500/20 dark:hover:from-blue-500/30 dark:hover:to-purple-500/30 hover:border-blue-500/50 hover:scale-105 transition-all duration-300 cursor-default text-gray-700 dark:text-gray-300"
-                      >
+                      <span key={skill} className="chip">
                         {skill}
                       </span>
                     ))}
                   </div>
-                </div>
+                </Reveal>
               ))}
-            </div>
           </div>
         </div>
       </div>
