@@ -4,12 +4,15 @@ import { Github, Linkedin, Download, MapPin, User } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Words, Reveal } from './Motion';
 import { profileLinks } from '../data/portfolioData';
+import { getCv } from '../utils/cv';
 
 export default function Hero() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const bgRef = useRef(null);
   const contentRef = useRef(null);
   const [imageError, setImageError] = useState(false);
+
+  const cv = getCv(i18n.language);
 
   const rolesRaw = t('hero.roles', { returnObjects: true });
   const roles = Array.isArray(rolesRaw) ? rolesRaw : [];
@@ -108,8 +111,8 @@ export default function Hero() {
                   {t('hero.ctaProjects')}
                 </a>
                 <a
-                  href={`${import.meta.env.BASE_URL}cv.pdf`}
-                  download
+                  href={cv.href}
+                  download={cv.downloadName}
                   className="btn btn-outline"
                 >
                   <Download size={15} />

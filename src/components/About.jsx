@@ -4,10 +4,13 @@ import { Download, MapPin, User } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Reveal, Words } from './Motion';
 import { education, associations } from '../data/portfolioData';
+import { getCv } from '../utils/cv';
 
 export default function About() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [imageError, setImageError] = useState(false);
+
+  const cv = getCv(i18n.language);
 
   const languagesRaw = t('about.languages', { returnObjects: true });
   const languages = Array.isArray(languagesRaw) ? languagesRaw : [];
@@ -69,8 +72,8 @@ export default function About() {
             <Reveal delay={400}>
               <div className="flex flex-wrap gap-3 mt-9">
                 <a
-                  href={`${import.meta.env.BASE_URL}cv.pdf`}
-                  download
+                  href={cv.href}
+                  download={cv.downloadName}
                   className="btn btn-solid"
                 >
                   <Download size={15} />
